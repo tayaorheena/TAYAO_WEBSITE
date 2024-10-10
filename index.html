@@ -1,0 +1,640 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore My World</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <!--BACKGROUND-->
+  <div class="background">
+    <!--HEADER-->
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="logo1.png" alt="">
+      </a>
+      <!--NAVIGATION BAR-->
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#aboutme">About Me</a>
+        <a href="#photos">Photos</a>
+        <a href="#travelvlogs">Travel Vlogs</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll('.navbar a');
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            // Remove 'active' class from all nav links
+            navLinks.forEach(nav => nav.classList.remove('active'));
+
+            // Add 'active' class to the clicked nav link
+            this.classList.add('active');
+          });
+        });
+      });
+    </script>
+
+
+    <!--HOME-->
+    <section class="home" id="home">
+      <div class="home-content">
+
+        <h1>Hi, I am Rheena Tayao</h1>
+        <h3>Aspiring Web Developer</h3>
+        <br>
+        <p>Hi, I’m Rheena Tayao, a college student studying Bachelor of Science in Information Technology at Quezon City
+          University. I’m passionate about web development and currently learning HTML, CSS, and JavaScript. I enjoy
+          building small projects and experimenting with design. I’m excited to grow my skills and connect with others
+          in the field.
+          <br>
+          <br>
+          I have a strong interest in Website Development, and I’m excited to dive deeper into this field. I hope to
+          gain practical experience through internships and projects. In my free time, I enjoy playing online games and
+          watching movies, which helps me balance my studies with something I love. I’m looking forward to connecting
+          with others who share my passion for technology!
+        </p>
+        <br>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    img {
+      max-width: 90%;
+      max-height: 90%;
+      margin-left: 15px;
+    }
+
+    .text {
+      font-size: 23px;
+      padding-left: 5px;
+      color: #000;
+    }
+  </style>
+
+  <body>
+      <!-- ABOUT ME SECTION -->
+    <section class="bulldog" id="bulldog">
+      <div class="aboutme1" id="aboutme">
+        <br>
+
+        <h3>About Me</h3>
+      </div>
+
+      <div class="container">
+        <div class="image">
+          <img src="pic.PNG">
+        </div>
+        <div class="text">
+          <br>
+          <span>I'm Rheena. My life has been shaped by a constant balancing act between responsibility and personal
+            desire. Growing up, I often felt like I had to be the family’s rock, stepping in to care for my younger
+            siblings and manage household expectations while silently navigating my own struggles.
+            <br>
+            <br>
+            As the eldest child, I’ve always felt a mix of responsibility and freedom shaping my journey. My love for
+            online gaming provided an escape, allowing me to connect with friends while navigating life’s ups and downs.
+            Traveling has also been a passion, enriching my life with diverse experiences and memories with my family.
+            <br>
+            <br>
+            During the pandemic, when everything changed, I stepped up by managing my own online shop. It was
+            challenging yet rewarding, teaching me resilience and entrepreneurship. I also gained valuable experience
+            working as a kitchen server, where I learned the importance of teamwork and hard work.
+            <br>
+            <br>
+            Now, as I embark on my first year of college, I’m excited to blend my interests with my studies. My family
+            and my partner in life are my greatest support, encouraging me to pursue my dreams while cherishing our time
+            together. This journey continues to shape who I am, balancing my passions with the love and responsibility I
+            hold dear.
+          </span>
+          </h1>
+        </div>
+      </div>
+  </body>
+  </section>
+
+
+  <!-- PHOTOS -->
+  <section class="photos" id="photos">
+
+    <style>
+      .slider {
+        position: relative;
+        width: 100%;
+        align-items: center;
+        max-width: 700px;
+        perspective: 1000px;
+      }
+
+      .slide {
+        position: absolute;
+        width: 95%;
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: rotateY(90deg);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .active {
+        opacity: 1;
+        transform: rotateY(0deg);
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        color: black;
+        font-size: 50px;
+        margin-top: 22.5rem;
+        margin-left: 0;
+        margin-right: 0;
+        cursor: pointer;
+        transition: .1s;
+      }
+
+      .prev {
+        left: 0.1px;
+        margin-left: 0;
+      }
+
+      .next {
+        right: 15px;
+        margin-right: 1px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        color: palevioletred;
+      }
+    </style>
+    </head>
+
+    <body>
+      <div class="slider">
+        <div class="slide active">
+          <img src="img6.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="img2.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="img3.jpg" alt="">
+        </div>
+        <div class="slider">
+          <div class="slide active">
+            <img src="img4.jpg" alt="">
+          </div>
+          <div class="slider">
+            <div class="slide active">
+              <img src="img5.jpg" alt="">
+            </div>
+            <div class="slider">
+              <div class="slide active">
+                <img src="img1.jpg" alt="">
+              </div>
+
+              <!-- Controls -->
+              <button class="prev">&lt;</button>
+              <button class="next">&gt;</button>
+            </div>
+
+            <script>
+              const slides = document.querySelectorAll('.slide');
+              const prevButton = document.querySelector('.prev');
+              const nextButton = document.querySelector('.next');
+              let currentSlide = 0;
+
+              // Function to show the current slide
+              function showSlide(index) {
+                slides.forEach((slide, i) => {
+                  slide.classList.remove('active');
+                  slide.style.transform = `rotateY(${(i - index) * 90}deg)`;
+                });
+                slides[index].classList.add('active');
+              }
+
+              // Update the transform based on mouse position
+              function handleMouseMove(event) {
+                const slider = document.querySelector('.slider');
+                const rect = slider.getBoundingClientRect();
+                const mouseX = event.clientX - rect.left;
+                const mouseY = event.clientY - rect.top;
+
+                const xPercent = (mouseX / rect.width) - 0.5; // Normalize to -0.5 to 0.5
+                const yPercent = (mouseY / rect.height) - 0.5; // Normalize to -0.5 to 0.5
+
+                const xRotation = yPercent * 10; // Adjust rotation amount
+                const yRotation = -xPercent * 10; // Adjust rotation amount
+
+                slider.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+              }
+
+              // Event listeners for slide navigation
+              prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+              });
+
+              nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+              });
+
+              // Initialize the slider
+              showSlide(currentSlide);
+
+              // Add mouse move event listener
+              const slider = document.querySelector('.slider');
+              slider.addEventListener('mousemove', handleMouseMove);
+              slider.addEventListener('mouseleave', () => {
+                slider.style.transform = 'rotateX(0deg) rotateY(0deg)'; // Reset on leave
+              });
+            </script>
+
+  </section>
+
+  <section class="travelvlogs" id="travelvlogs">
+    <div class="travelvlogs-content">
+      <br>
+      <h1>Travel Vlogs</h1>
+    </div>
+
+
+
+    <style>
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        padding: 20px;
+        height: 100vh;
+      }
+
+      .video-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        transition: transform 0.3s;
+        cursor: pointer;
+        aspect-ratio: 9 / 16;
+      }
+
+      .video-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px 5px black;
+      }
+
+
+      video {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        border: none;
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+
+      .video-container:hover video {
+        opacity: 0.8;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: white;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .video-container:hover .overlay {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .modal {
+        height: 80%;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal video {
+        width: 80%;
+        height: 80%;
+        border-radius: 12px;
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    </style>
+    </head>
+
+    <body>
+
+      <div class="gallery">
+        <div class="video-container" data-video="video/vid1.mov">
+          <video src="video/vid1.mov" muted loop></video>
+          <div class="overlay">Travel Vlog 1</div>
+
+        </div>
+
+
+        <div class="video-container" data-video="video/vid2.mov">
+          <video src="video/vid2.mov" muted loop></video>
+          <div class="overlay">Travel Vlog 2</div>
+
+        </div>
+
+
+        <div class="video-container" data-video="video/vid4.mov">
+          <video src="video/vid4.mov" muted loop></video>
+          <div class="overlay">Travel Vlog 3</div>
+
+        </div>
+
+
+        <div class="video-container" data-video="video/vid3.mov">
+          <video src="video/vid3.mov" muted loop></video>
+          <div class="overlay">Travel Vlog 4</div>
+
+        </div>
+      </div>
+
+      <!-- Modal for Playing Videos -->
+      <div class="modal" id="videoModal">
+        <span class="close" id="closeModal">&times;</span>
+        <div id="modalContainer">
+          <iframe id="modalVideo" allowfullscreen></iframe>
+          <!-- You could use a video tag if needed for local videos -->
+        </div>
+      </div>
+
+      <script>
+        const videoContainers = document.querySelectorAll('.video-container');
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeModal = document.getElementById('closeModal');
+
+        videoContainers.forEach(container => {
+          container.addEventListener('click', () => {
+            const videoSrc = container.getAttribute('data-video');
+            if (videoSrc.includes('youtube.com')) {
+              modalVideo.src = videoSrc;
+              modal.style.display = 'flex';
+            } else {
+              const modalContainer = document.getElementById('modalContainer');
+              modalContainer.innerHTML = `<video src="${videoSrc}" controls autoplay></video>`;
+              modal.style.display = 'flex';
+            }
+          });
+        });
+
+        closeModal.addEventListener('click', () => {
+          modal.style.display = 'none';
+          modalVideo.src = '';
+          // Remove local video if opened
+          const modalContainer = document.getElementById('modalContainer');
+          modalContainer.innerHTML = '';
+        });
+
+        window.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            modal.style.display = 'none';
+            modalVideo.src = '';
+            const modalContainer = document.getElementById('modalContainer');
+            modalContainer.innerHTML = '';
+          }
+        });
+      </script>
+
+
+
+  </section>
+
+
+  <!-- GOALS -->
+  <section class="goals" id="goals">
+    <div class="goals-content">
+      <br>
+      <h1 class="goals-h1">Goals</h1>
+    </div>
+    <br>
+    <div class="card1">
+      <div class="card-content1">
+        <h2>Academic Excellence</h2>
+        <p>I aim to maintain a strong GPA and fully understand key concepts in IT.</p>
+      </div>
+    </div>
+    <div class="card1">
+      <div class="card-content1">
+        <h2>Skill Development</h2>
+        <p>I want to gain hands-on experience with programming languages, networking, and cybersecurity through
+          coursework and personal projects.</p>
+      </div>
+    </div>
+
+    <div class="card1">
+      <div class="card-content1">
+        <h2>Networking</h2>
+        <p>I hope to connect with industry professionals and peers to share knowledge and explore career opportunities.
+        </p>
+      </div>
+    </div>
+
+    <div class="card1">
+      <div class="card-content1">
+        <h2>Certifications</h2>
+        <p>I intend to earn relevant IT certifications, such as CompTIA or Cisco, to enhance my employability.</p>
+      </div>
+    </div>
+
+    <div class="card1">
+      <div class="card-content1">
+        <h2>Career Clarity</h2>
+        <p>I want to explore various IT roles to identify my interests and set a clear career path.</p>
+      </div>
+    </div>
+
+    <div class="card1">
+      <div class="card-content1">
+        <h2>Contribution to Community</h2>
+        <p>I aspire to contribute to tech initiatives or volunteer projects that use technology for social good.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <br>
+    <div class="contact-content"></div>
+    <h1 class="contact-h1">Contact Me!</h1>
+    </div>
+    <br>
+    <div id="cards">
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-instagram"></i>
+          <h2>Instagram</h2>
+
+          <p>Username: <span>rhnntyy</span></p>
+
+          <a href="https://www.instagram.com/rhnntyy?igsh=ZXZrcnEzdHhyaGtp&utm_source=qr">
+            <i class="fa-solid fa-link"></i>
+            <span>Follow me</span>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-github"></i>
+          <h2>GitHub</h2>
+
+          <p>Username: <span>tayaorheena</span></p>
+
+          <a href="https://github.com/tayaorheena">
+            <i class="fa-solid fa-link"></i>
+            <span>Follow me</span>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <i class="fa-brands fa-facebook"></i>
+          <h2>Facebook</h2>
+
+          <p>Username: <span>Rheena Tayao</span></p>
+
+          <a href="https://www.facebook.com/rheena.tayao.1?mibextid=LQQJ4d">
+            <i class="fa-solid fa-link"></i>
+            <span>Follow me</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- CONTACT FORM -->
+    <div id="contactForm">
+      <br>      
+      <form id="contactForm">
+
+        <input placeholder="Name" id="name" type="text" required />
+        <input placeholder="Email" id="email" type="email" required />
+        <input placeholder="Subject" type="text" required />
+        <input placeholder="Message" id="message" />
+        <button id="formBtn" class="formBtn" type="submit">Submit</button>
+
+      </form>
+
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Get form values
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+
+          // Show an alert with the submitted information
+          alert(`Thank you for your submission, ${name}!\n\nYour message:\n${message}\n\nWe will contact you at ${email}.`);
+
+          // Optionally, you can reset the form after submission
+          this.reset();
+        });
+      </script>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#aboutme">About me</a></li>
+          <li><a href="#goals">Goals</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com/rheena.tayao.1?mibextid=LQQJ4d" class="social-icon fb"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/rhnntyy?igsh=ZXZrcnEzdHhyaGtp&utm_source=qr" class="social-icon ig"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@bwshshksksjs?_t=8qI0T6aSSue&_r=1" class="social-icon tiktok"><i
+            class="fab fa-tiktok"></i></a>
+        <a href="https://github.com/tayaorheena" class="social-icon github"><i class="fab fa-github"></i></a>
+        <a href="https://t.me/rhnntyy" class="social-icon telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Explore My World. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
